@@ -1,0 +1,40 @@
+@import "./sass/index";
+
+.add-city-container {
+	display: grid;
+	height: 100vh;
+	place-items: center;
+	form {
+		width: 20rem;
+		h1 {
+			text-align: center;
+		}
+		label {
+			text-transform: capitalize;
+			padding: 0 0.5rem;
+			color: $clr-grey-1;
+		}
+		.main-input {
+			display: flex;
+			flex-direction: column;
+			margin-top: 0.5rem;
+			.input-add-city {
+				margin-bottom: 1rem;
+				padding: 0.8rem;
+				background-color: #2a2f3b;
+				border: none;
+				border-radius: 14px;
+				border: 1px solid $clr-grey-5;
+				color: $clr-white;
+				&:focus {
+					outline: 1px solid #1d5eff;
+					border-color: transparent;
+					box-shadow: 0 0 0 5px rgba(29, 94, 255, 0.3);
+				}
+			}
+			.btn-submit {
+				border-radius: 14px;
+			}
+		}
+	}
+}

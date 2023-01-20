@@ -1,0 +1,26 @@
+@import "./sass/index";
+
+.main-header {
+	margin-top: 3.75rem;
+	background: url(../../images/527ab2e3fa67719c6918.jpg) no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding: 10rem 0;
+	color: $clr-white;
+	h1 {
+		font-size: $large-size;
+	}
+	h3 {
+		font-size: $small-size-I;
+		font-weight: normal;
+	}
+	button {
+		margin-top: 2rem;
+		letter-spacing: 0.5px;
+		padding: 0.3rem 1rem;
+		span {
+			font-size: $extra-small-size-IIII;
+			font-weight: 600 !important;
+		}
+	}
+}
