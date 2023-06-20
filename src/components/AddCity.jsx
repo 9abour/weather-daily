@@ -1,4 +1,3 @@
-import "../components/Styles/addCity.scss";
 import { useState } from "react";
 import { CitiesConsumer } from "../context";
 

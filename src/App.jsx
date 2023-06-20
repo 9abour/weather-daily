@@ -4,6 +4,7 @@ import AddCityHeader from "./components/AddCityHeader";
 import Cities from "./components/Home/Cities";
 import Navbar from "./components/Navbar/Navbar";
 import WeatherDaily from "./components/WeatherDaily/WeatherDaily";
+import "./app.scss";
 
 function App() {
 	return (
