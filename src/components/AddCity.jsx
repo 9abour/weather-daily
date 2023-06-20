@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CitiesConsumer } from "../context";
+import "../Styles/addCity.scss";
 
 const AddCity = () => {
 	// Get city from input
