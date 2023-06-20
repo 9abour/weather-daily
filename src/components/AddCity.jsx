@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { CitiesConsumer } from "../context";
+import Swal from "sweetalert2";
 
 const AddCity = () => {
 	// Get city from input
-	const [inputValue, setInputValue] = useState();
+	const [inputValue, setInputValue] = useState("");
 
 	const handleOnChange = e => {
 		setInputValue(e.target.value);
@@ -13,13 +14,12 @@ const AddCity = () => {
 			{value => {
 				const handleOnSubmit = e => {
 					e.preventDefault();
-					value.addNewCity(inputValue);
-					value.saveCityToLS(inputValue);
-					value.getFormattedWeatherData();
-					value.handleDailyWeather();
+					if (inputValue != "") {
+						value.addNewCity(inputValue);
+					}
 
 					// Clear add city input value
-					document.querySelector(".input-add-city").value = "";
+					setInputValue("");
 				};
 				return (
 					<main className="add-city-container">
@@ -32,17 +32,19 @@ const AddCity = () => {
 									}}
 									className="input-add-city"
 									type="text"
-									placeholder="Add city"
+									placeholder="Cairo"
+									value={inputValue}
 									autoFocus
 								/>
-								<input
+								<button
 									className="main-btn btn-submit"
 									type="submit"
-									value="Submit"
 									onClick={e => {
 										handleOnSubmit(e);
 									}}
-								/>
+								>
+									Add
+								</button>
 							</div>
 						</form>
 					</main>

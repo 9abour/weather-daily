@@ -1,5 +1,6 @@
 import React, { Component, createContext, useContext } from "react";
 import swal from "sweetalert";
+import Swal from "sweetalert2";
 
 const CitiesContext = createContext();
 
@@ -26,7 +27,7 @@ class CitiesProvider extends Component {
 	// Import cities from LS and add it to this state
 	setCities = () => {
 		const citiesFromLS = JSON.parse(localStorage.getItem("cities"));
-		if (citiesFromLS !== null) {
+		if (citiesFromLS != null) {
 			setTimeout(() => {
 				this.setState(() => {
 					return {
@@ -93,11 +94,36 @@ class CitiesProvider extends Component {
 
 	// Add new city
 	addNewCity = city => {
-		this.setState(() => {
-			return {
-				cities: [...this.state.cities, city],
-			};
+		let found = false;
+		this.state.cities.map(item => {
+			if (item == city) {
+				found = true;
+			}
 		});
+		if (!found) {
+			this.saveCityToLS(city);
+			this.getFormattedWeatherData();
+			this.handleDailyWeather();
+			this.setState(() => {
+				return {
+					cities: [...this.state.cities, city],
+				};
+			});
+			Swal.fire({
+				position: "center",
+				icon: "success",
+				title: "successfully added a new city.",
+				showConfirmButton: false,
+				timer: 1500,
+			});
+		} else {
+			// This city already exists.
+			Swal.fire({
+				icon: "error",
+				title: "Oops...",
+				text: "This city already exists!",
+			});
+		}
 	};
 
 	getCity = id => {
