@@ -1,0 +1,27 @@
+@import "./sass/index";
+
+.navbar-container {
+	height: 60px;
+	box-shadow: $light-shadow;
+	padding: 0 3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	z-index: 99999;
+	width: 100%;
+	top: 0;
+	.logo {
+		cursor: pointer;
+	}
+	.menu {
+		.menu-btn {
+			.dark,
+			.light {
+				&.hide {
+					display: none;
+				}
+			}
+		}
+	}
+}
