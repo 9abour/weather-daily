@@ -1,10 +1,11 @@
+import "../components/Styles/addCity.scss";
 import { useState } from "react";
 import { CitiesConsumer } from "../context";
-import "../Styles/addCity.scss";
 
 const AddCity = () => {
 	// Get city from input
 	const [inputValue, setInputValue] = useState();
+
 	const handleOnChange = e => {
 		setInputValue(e.target.value);
 	};

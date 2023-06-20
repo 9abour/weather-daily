@@ -141,7 +141,6 @@ class CitiesProvider extends Component {
 		});
 
 		localStorage.setItem("currentCity", JSON.stringify(cityWeather));
-		console.log(cityWeather);
 	};
 
 	getFormattedDailyWeather = () => {
